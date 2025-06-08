@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TSHoly_Grayle</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .form-container { display: flex; }
+    .form-left { flex: 1; }
+    .form-right { display: flex; flex-direction: column; margin-left: 20px; }
+    button { margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="form-left">
+      <label>Input File Path:</label><br>
+      <input type="text" id="fileInput" placeholder="Enter full file path here" size="50" />
+      <p>Array Count: <span id="arrayCount">0</span></p>
+    </div>
+    <div class="form-right">
+      <button id="btnread_file">read_file</button>
+      <button id="btnshow_array">show_array</button>
+      <button id="btnReset">Reset</button>
+      <button id="btnExit">Exit</button>
+    </div>
+  </div>
+  <script src="./TSHoly_Grayle.js" type="module"></script>
+</body>
+</html>
+
+
