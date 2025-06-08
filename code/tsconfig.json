@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es2016",             // Supports modern JavaScript features
+    "module": "commonjs",           // Node-style modules
+    "lib": ["es2016", "dom"],       // ✅ Adds DOM types like document/window
+    "outDir": "../dist",             // JS output folder
+    "strict": false,                // Beginner-friendly mode
+    "esModuleInterop": true         // Allows default imports from CommonJS
+  },
+  "include": ["../*.ts"]
+}
+
+
