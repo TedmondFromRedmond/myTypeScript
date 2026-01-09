@@ -1,0 +1,310 @@
+:root {
+    color-scheme: light;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    line-height: 1.5;
+    background: #f7f8fa;
+    color: #1a1f2b;
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+  }
+  
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 20px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  header h1 {
+    margin-bottom: 8px;
+    font-size: 2rem;
+  }
+  
+  header p {
+    margin: 0;
+    color: #4b5565;
+  }
+  
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .search-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    padding: 16px;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e2e7ef;
+  }
+  
+  .search-controls #searchInput {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #d5d9e0;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .search-controls #searchInput:focus {
+    outline: none;
+    border-color: #1f6feb;
+    box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.1);
+  }
+  
+  .search-controls button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    background: #1f6feb;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  
+  .search-controls button:hover {
+    background: #1b5fd1;
+  }
+  
+  .search-controls #prevMatchButton,
+  .search-controls #nextMatchButton {
+    background: #10b981;
+    font-size: 0.9rem;
+  }
+  
+  .search-controls #prevMatchButton:hover,
+  .search-controls #nextMatchButton:hover {
+    background: #059669;
+  }
+  
+  .search-controls #clearSearchButton {
+    background: #6b7280;
+  }
+  
+  .search-controls #clearSearchButton:hover {
+    background: #4b5563;
+  }
+  
+  .search-results {
+    font-size: 0.9rem;
+    color: #4b5565;
+    margin-left: auto;
+  }
+  
+  .search-results.highlight {
+    color: #1f6feb;
+    font-weight: 600;
+  }
+  
+  .file-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #d5d9e0;
+    background: #ffffff;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .file-control:hover {
+    border-color: #1f6feb;
+    box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.1);
+  }
+  
+  .file-control input {
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+  
+  .file-control input::file-selector-button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #d5d9e0;
+    background: #f7f8fa;
+    color: #1a1f2b;
+    font-weight: 500;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  
+  .file-control input::file-selector-button:hover {
+    background: #e8ebef;
+    border-color: #b8bcc5;
+  }
+  
+  button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    background: #1f6feb;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #1b5fd1;
+  }
+  
+  .table-wrapper {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 12px 24px rgba(18, 38, 63, 0.08);
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 70vh;
+    min-height: 200px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  #csvTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    table-layout: fixed;
+  }
+  
+  /* Table headers */
+  #csvTable th {
+    border-bottom: 2px solid #d5d9e0;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #1a1f2b;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Table cells */
+  #csvTable td {
+    border-bottom: 1px solid #e2e7ef;
+    padding: 12px 16px;
+    text-align: left;
+    color: #4b5565;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Styling for links in table cells */
+  #csvTable td a {
+    color: #1f6feb;
+    text-decoration: none;
+    transition: text-decoration 0.2s;
+  }
+  
+  #csvTable td a:hover {
+    text-decoration: underline;
+    color: #1b5fd1;
+  }
+  
+  #csvTable td a:visited {
+    color: #6b46c1;
+  }
+  
+  /* Column widths using fixed table layout */
+  #csvTable th:nth-child(1),
+  #csvTable td:nth-child(1) {
+    width: 15%;
+    max-width: 180px;
+  }
+  
+  #csvTable th:nth-child(2),
+  #csvTable td:nth-child(2) {
+    width: 25%;
+    max-width: 240px;
+    word-break: break-all;
+  }
+  
+  #csvTable th:nth-child(3),
+  #csvTable td:nth-child(3) {
+    width: 45%;
+    max-width: 432px;
+  }
+  
+  #csvTable th:nth-child(4),
+  #csvTable td:nth-child(4) {
+    width: 15%;
+    max-width: 144px;
+  }
+  
+  /* Table header section */
+  #csvTable thead {
+    background: #f0f4fa;
+  }
+  
+  #csvTable thead th {
+    background: #f0f4fa;
+  }
+  
+  #csvTable tbody tr:hover {
+    background: #f5f7fa;
+  }
+  
+  #csvTable tbody tr:nth-child(even) {
+    background: #fafbfd;
+  }
+  
+  #csvTable tbody tr:nth-child(even):hover {
+    background: #f5f7fa;
+  }
+  
+  #csvTable tbody:empty::after {
+    content: "No data to display";
+    display: block;
+    padding: 40px;
+    text-align: center;
+    color: #8b95a6;
+    font-style: italic;
+  }
+  
+  /* Highlighted search results */
+  #csvTable tbody tr.search-match {
+    background: #fef3c7 !important;
+    border-left: 4px solid #f59e0b;
+  }
+  
+  #csvTable tbody tr.search-match:hover {
+    background: #fde68a !important;
+  }
+  
+  #csvTable tbody tr.search-current {
+    background: #dbeafe !important;
+    border-left: 4px solid #1f6feb;
+  }
+  
+  #csvTable tbody tr.search-current:hover {
+    background: #bfdbfe !important;
+  }
+  
+  .status {
+    font-size: 0.95rem;
+    color: #4b5565;
+    padding: 8px 0;
+  }
+  
+  .status p {
+    margin: 0;
+  }
+  

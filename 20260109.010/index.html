@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artificial Intelligence Tool Table</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <h1>Artificial Intelligence Tool Table</h1>
+        <p>
+          From the desk of TedmondFromRedmond
+        </p>
+      </header>
+
+      <section class="controls">
+        <!-- CSV file loads automatically on page load -->
+      </section>
+
+      <section class="search-controls">
+        <input 
+          id="searchInput" 
+          type="text" 
+          placeholder="Search in table..." 
+          aria-label="Search table"
+        />
+        <button id="searchButton" type="button">Search</button>
+        <button id="prevMatchButton" type="button" style="display: none;" title="Previous match (↑)">↑ Prev</button>
+        <button id="nextMatchButton" type="button" style="display: none;" title="Next match (↓)">Next ↓</button>
+        <button id="clearSearchButton" type="button" style="display: none;">Clear</button>
+        <span id="searchResults" class="search-results"></span>
+      </section>
+
+      <section class="table-wrapper">
+        <table id="csvTable" aria-live="polite">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section class="status">
+        <p id="statusMessage">Click "Submit a new site" to load the CSV file.</p>
+      </section>
+    </main>
+
+    <script src="main.js?v=2"></script>
+  </body>
+</html>
